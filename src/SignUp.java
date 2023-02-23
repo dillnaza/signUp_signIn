@@ -4,7 +4,20 @@ import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
 
 public class SignUp extends Shape{
-    //Check length of IIN and is every char number
+
+    public boolean isValidLogin(String enteredPassword){
+        boolean containsUpper = false;
+        boolean containsSymbol = false;
+            for(int i = 0; i < enteredPassword.length(); i++){
+                if (Character.isUpperCase(enteredPassword.charAt(i))){
+                    containsUpper = true;
+                }
+                if(Character.isLetterOrDigit(enteredPassword.charAt(i))){
+                    containsSymbol = true;
+                }
+            }
+        return containsSymbol && containsUpper;
+    }
     public boolean isValidID(String enteredId){
         boolean isDigit = true;
         if (enteredId.length() == 12){
@@ -36,6 +49,13 @@ public class SignUp extends Shape{
         }
         return containsSymbol && containsUpper;
     }
+    public boolean isValidTg(String enteredTg)
+    {
+        for(int i = 0; i < enteredTg.length(); i++) {
+            return enteredTg.charAt(0) == '@';
+        }
+        return false;
+    }
     @Override
     protected boolean doesUserExist(String individualNumber, String login) {
         try {
@@ -58,13 +78,13 @@ public class SignUp extends Shape{
         String salt=passwordEncryptionService.generateSalt();
         setSalt(salt);
         if(doesUserExist(getEnteredId(), getEnteredLogin()) &&
-                isValidID(getEnteredId()) && isValidPassword(getEnteredPassword())){
+                isValidLogin(getEnteredLogin())&&isValidID(getEnteredId()) && isValidPassword(getEnteredPassword())&&isValidTg(getEnteredTg())){
             try {
                 String encryptedPassword=passwordEncryptionService.getEncryptedPassword(getEnteredPassword(), getSalt());
                 Connection con = DriverManager.getConnection(jdbcUrl, userName, MasterPassword);
-                String sql = "INSERT INTO users (iin, login, password, salt)"
+                String sql = "INSERT INTO users (iin, login, password, salt, email, telegram)"
                         + " VALUES ('" + getEnteredId() + "', '" + getEnteredLogin() +
-                        "', '" + encryptedPassword + "', '" + getSalt() + "');";
+                        "', '" + encryptedPassword + "', '" + getSalt() + "', '" + getEnteredEmail() + "', '" + getEnteredTg() + "');";
                 Statement statement = con.createStatement();
                 int rows = statement.executeUpdate(sql);
                 if(rows > 0){
