@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 public class TelegramNotification  {
     private static HttpURLConnection con;
-    private static String tgToken = "6065977127:AAGtQCMjwYFyL6rBUfkR53HAWMBBdspxnsY";
+    private static String tgToken = "tg_token";
     private static int  chatId = 1273572840;
     private static String urlToken = "https://api.telegram.org/bot"+tgToken+"/sendMessage";
 
