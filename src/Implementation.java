@@ -302,6 +302,7 @@ public class Implementation {
         try {
             if (sIn.Authorization()) {
                 JOptionPane.showMessageDialog(frame, "You have successfully logged in", "Success", JOptionPane.PLAIN_MESSAGE);
+                notification.setAnswer("Someone logged into the app now");
                 logintext.setText("");
                 passwordtext.setText("");
             } else {
