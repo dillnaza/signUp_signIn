@@ -1,7 +1,3 @@
-import org.telegram.telegrambots.meta.TelegramBotsApi;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +6,6 @@ import java.awt.event.MouseEvent;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
-import java.util.Objects;
 import javax.swing.*;
 
 public class Implementation {
@@ -106,6 +101,17 @@ public class Implementation {
         resFrame.add(submit);
         resFrame.setVisible(false);
         resFrame.setSize(300, 200);
+
+        frame.getContentPane().setBackground(Color.pink);
+        logintext.setBackground(Color.lightGray);
+        idtext.setBackground(Color.lightGray);
+        passwordtext.setBackground(Color.lightGray);
+        tgtext.setBackground(Color.lightGray);
+        emailtext.setBackground(Color.lightGray);
+
+        resFrame.getContentPane().setBackground(Color.pink);
+        newPassTx.setBackground(Color.lightGray);
+        restCode.setBackground(Color.lightGray);
     }
 
     private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,12 +298,6 @@ public class Implementation {
     private void Authorization(ActionEvent actionEvent) {
         sIn.setLoginOrId(logintext.getText());
         sIn.setEnteredPassword(Arrays.toString(passwordtext.getPassword()));
-        try {
-            TelegramBotsApi botsApi = new TelegramBotsApi();
-            botsApi.registerBot(new TelegramNotification());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
         TelegramNotification notification = new TelegramNotification();
         try {
             if (sIn.Authorization()) {

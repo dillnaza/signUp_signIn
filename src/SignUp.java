@@ -5,14 +5,14 @@ import java.sql.*;
 
 public class SignUp extends Shape{
 
-    public boolean isValidLogin(String enteredPassword){
+    public boolean isValidLogin(String enteredLogin){
         boolean containsUpper = false;
         boolean containsSymbol = false;
-            for(int i = 0; i < enteredPassword.length(); i++){
-                if (Character.isUpperCase(enteredPassword.charAt(i))){
+            for(int i = 0; i < enteredLogin.length(); i++){
+                if (Character.isUpperCase(enteredLogin.charAt(i))){
                     containsUpper = true;
                 }
-                if(Character.isLetterOrDigit(enteredPassword.charAt(i))){
+                if(Character.isLetterOrDigit(enteredLogin.charAt(i))){
                     containsSymbol = true;
                 }
             }
