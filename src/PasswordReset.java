@@ -22,7 +22,7 @@ public class PasswordReset extends SignIn {
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("dilnazbaidakhanova@gmail.com", "qifhyokkjdndvnst");
+                return new PasswordAuthentication("dilnazbaidakhanova@gmail.com", "GMAILCODE");
             }
         });
         session.setDebug(true);
