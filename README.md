@@ -9,6 +9,7 @@ This Java application provides a user authentication and password management sys
 - [Features](#features)
 - [Usage](#usage)
 - [Code Overview](#code-overview)
+- [Contacts](#contacts)
 
 ## Getting Started
 
@@ -73,4 +74,7 @@ The codebase is organized into several classes:
 - `TelegramNotification`: Sends notifications to a Telegram chat.
 - `Implementation`: The main class that manages the GUI and user interactions.
 
-Please refer to the code comments for more detailed information about each class and its functions.
+## Contacts
+
+- gmail: dilnazbaidakhanova@gmail.com
+- telegram: @dillnazzza**
