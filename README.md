@@ -77,4 +77,4 @@ The codebase is organized into several classes:
 ## Contacts
 
 - gmail: dilnazbaidakhanova@gmail.com
-- telegram: @dillnazzza**
+- telegram: @dillnazzza
