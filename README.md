@@ -54,7 +54,7 @@ Follow these steps to run the application:
 
 2. **Configure Email and Telegram**:
    - Set up a Gmail account and enable "less secure apps" to send emails via Gmail.
-   - Replace `"dilnazbaidakhanova@gmail.com"` and `"qifhyokkjdndvnst"` in the `PasswordReset` class with your Gmail credentials.
+   - Replace `"dilnazbaidakhanova@gmail.com"` and `"GMAILCODE"` in the `PasswordReset` class with your Gmail credentials.
    - Create a Telegram bot and obtain a token.
    - Replace `"tg_token"` and `chatId` in the `TelegramNotification` class with your Telegram bot token and chat ID.
 
