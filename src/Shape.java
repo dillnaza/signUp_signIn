@@ -10,7 +10,6 @@ public abstract class Shape {
     private String salt;
 
 
-    //getters and setters
     public String getEnteredId() {
         return enteredId;
     }
