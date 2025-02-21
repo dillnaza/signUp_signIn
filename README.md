@@ -73,8 +73,3 @@ The codebase is organized into several classes:
 - `SignUp`: Handles user registration and input validation.
 - `TelegramNotification`: Sends notifications to a Telegram chat.
 - `Implementation`: The main class that manages the GUI and user interactions.
-
-## Contacts
-
-- Email: dilnazbaidakhanova@gmail.com
-- Telegram: @dillnazzza
