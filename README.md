@@ -1,9 +1,7 @@
 # User Authentication and Password Management System
-
 This Java application provides a user authentication and password management system. Users can sign up, sign in, and reset their passwords via email. The system ensures the security of user passwords through encryption using the PBKDF2 algorithm with HMAC-SHA1.
 
 ## Table of Contents
-
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Features](#features)
@@ -11,11 +9,9 @@ This Java application provides a user authentication and password management sys
 - [Code Overview](#code-overview)
 
 ## Getting Started
-
 Follow these instructions to set up and run the User Authentication and Password Management System on your local machine.
 
 ## Prerequisites
-
 Before you begin, make sure you have the following dependencies installed:
 - Java Development Kit (JDK)
 - PostgreSQL Database
@@ -23,7 +19,6 @@ Before you begin, make sure you have the following dependencies installed:
 - Secure Sockets Layer (SSL) certificate (for Gmail SMTP)
 
 ## Features
-
 The application includes the following features:
 1. **User Registration**: Users can create accounts with the following details:
    - Login
@@ -39,7 +34,6 @@ The application includes the following features:
 4. **Telegram Notification**: The application can send notification messages to a Telegram chat when users sign in.
 
 ## Usage
-
 Follow these steps to run the application:
 1. **Set Up the Database**:
    - Create a PostgreSQL database.
@@ -54,7 +48,6 @@ Follow these steps to run the application:
    - Use the GUI to sign up, sign in, and reset passwords.
 
 ## Code Overview
-
 The codebase is organized into several classes:
 - `PasswordEncryptionService`: Handles password encryption and authentication.
 - `PasswordReset`: Manages password reset via email.
