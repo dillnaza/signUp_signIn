@@ -19,9 +19,7 @@ public class PasswordEncryptionService {
         String algorithm = "PBKDF2WithHmacSHA1";
         int derivedKeyLength = 160;
         int iterations = 20000;
-
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), iterations, derivedKeyLength);
-
         SecretKeyFactory f = SecretKeyFactory.getInstance(algorithm);
         String s = new String(f.generateSecret(spec).getEncoded(), StandardCharsets.UTF_8);
         return s;
@@ -29,7 +27,6 @@ public class PasswordEncryptionService {
 
     public String generateSalt() throws NoSuchAlgorithmException {
         SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
-
         byte[] salt = new byte[8];
         random.nextBytes(salt);
         String saltS = new String(salt, StandardCharsets.UTF_8);
