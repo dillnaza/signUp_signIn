@@ -16,7 +16,6 @@ public class Implementation {
     JLabel idlabel = new JLabel("IIN:");
     JTextField idtext = new JTextField();
     JLabel iderror = new JLabel("must contain 12 digits");
-
     JLabel tglabel = new JLabel("Telegram:");
     JTextField tgtext = new JTextField();
     JLabel emaillabel = new JLabel("Email:");
@@ -31,10 +30,8 @@ public class Implementation {
     JButton In2 = new JButton();
     JLabel haveacc = new JLabel();
     JLabel forgetpass = new JLabel("Forget password?");
-
     SignUp sUp = new SignUp();
     SignIn sIn = new SignIn();
-
     JFrame resFrame = new JFrame();
     JLabel resLabelCode = new JLabel();
     JTextField restCode = new JTextField();
@@ -61,37 +58,29 @@ public class Implementation {
         frame.add(Up2);
         frame.add(In2);
         frame.add(forgetpass);
-
         loginerror.setVisible(false);
         iderror.setVisible(false);
         tgerror.setVisible(false);
         passerror.setVisible(false);
-
         loginerror.setBounds(90, 33, 250, 20);
         loginerror.setFont(new Font("TimesRoman", Font.PLAIN, 10));
         loginerror.setForeground(Color.RED);
         frame.add(loginerror);
-
         iderror.setBounds(90, 63, 250, 20);
         iderror.setFont(new Font("TimesRoman", Font.PLAIN, 10));
         iderror.setForeground(Color.RED);
         frame.add(iderror);
-
         tgerror.setBounds(90, 93, 250, 20);
         tgerror.setFont(new Font("TimesRoman", Font.PLAIN, 10));
         tgerror.setForeground(Color.RED);
         frame.add(tgerror);
-
         passerror.setBounds(5, 153, 300, 20);
         passerror.setFont(new Font("TimesRoman", Font.PLAIN, 10));
         passerror.setForeground(Color.RED);
         frame.add(passerror);
-
         frame.setLayout(null);
         frame.setVisible(true);
-
         SignUpPos();
-
         resFrame.add(resLabelCode);
         resFrame.add(restCode);
         resFrame.add(newPass);
@@ -101,14 +90,12 @@ public class Implementation {
         resFrame.add(submit);
         resFrame.setVisible(false);
         resFrame.setSize(300, 200);
-
         frame.getContentPane().setBackground(Color.pink);
         logintext.setBackground(Color.lightGray);
         idtext.setBackground(Color.lightGray);
         passwordtext.setBackground(Color.lightGray);
         tgtext.setBackground(Color.lightGray);
         emailtext.setBackground(Color.lightGray);
-
         resFrame.getContentPane().setBackground(Color.pink);
         newPassTx.setBackground(Color.lightGray);
         restCode.setBackground(Color.lightGray);
@@ -124,7 +111,6 @@ public class Implementation {
 
     private void SignUpPos() {
         frame.setTitle("Sign-up frame");
-
         forgetpass.setVisible(false);
         idlabel.setVisible(true);
         idtext.setVisible(true);
@@ -137,48 +123,39 @@ public class Implementation {
         In2.setVisible(false);
         Up2.setVisible(true);
         resFrame.setVisible(false);
-
         loginlabel.setText("Login:");
         loginlabel.setBounds(20, 20, 150, 20);
         logintext.setText("");
         logintext.setBounds(90, 20, 200, 20);
         logintext.addActionListener(actionlogin);
-
         idlabel.setBounds(20, 50, 150, 20);
         idtext.setText("");
         idtext.setBounds(90, 50, 200, 20);
         idtext.addActionListener(actionid);
-
         tglabel.setBounds(20, 80, 150, 20);
         tgtext.setText("");
         tgtext.setBounds(90, 80, 200, 20);
         tgtext.addActionListener(actiontg);
-
         emaillabel.setBounds(20, 110, 150, 20);
         emailtext.setText("");
         emailtext.setBounds(90, 110, 200, 20);
-
         passwordlabel.setBounds(20, 140, 150, 20);
         passwordtext.setText("");
         passwordtext.setEchoChar('*');
         passwordtext.setBounds(90, 140, 200, 20);
         passwordtext.addActionListener(actionpass);
-
         Signup.setBounds(120, 180, 85, 20);
         Signup.addActionListener(this::CreateUser);
         haveacc.setText("Already have an account?");
         haveacc.setBounds(100, 220, 220, 20);
         Up2.setText("Sign in");
         Up2.setBounds(120, 240, 85, 20);
-
         Up2.addActionListener(this::SignInActionPerformed);
-
         frame.setSize(330, 330);
     }
 
     private void SignInPos() {
         frame.setTitle("Sign-in frame");
-
         loginerror.setVisible(false);
         iderror.setVisible(false);
         tgerror.setVisible(false);
@@ -195,29 +172,23 @@ public class Implementation {
         In2.setVisible(true);
         forgetpass.setVisible(true);
         resFrame.setVisible(false);
-
         loginlabel.setText("Login or IIN:");
         loginlabel.setBounds(30, 20, 150, 20);
         logintext.setText("");
         logintext.setBounds(40, 40, 220, 30);
-
         passwordlabel.setBounds(30, 80, 150, 20);
         passwordtext.setText("");
         passwordtext.setBounds(40, 100, 220, 30);
-
         Signin.setBounds(100, 150, 85, 20);
         Signin.addActionListener(this::Authorization);
-
         forgetpass.setBounds(100, 180, 200, 20);
         forgetpass.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent evt) {
                 forgetpass.setText("<html><u>Forget password?</u></html>");
             }
-
             public void mouseExited(MouseEvent evt) {
                 forgetpass.setText("<html><b>Forget password?</b></html>");
             }
-
             @Override
             public void mouseClicked(MouseEvent e) {
                 int input = JOptionPane.showConfirmDialog(null, "Do you want to change password?");
@@ -228,15 +199,11 @@ public class Implementation {
                 System.out.println(input);
             }
         });
-
         haveacc.setText("Don't have an account?");
         haveacc.setBounds(80, 250, 200, 20);
-
         In2.setText("Sign up");
         In2.setBounds(100, 270, 85, 20);
-
         In2.addActionListener(this::SignUpActionPerformed);
-
         frame.setSize(300, 370);
     }
 
@@ -253,13 +220,14 @@ public class Implementation {
             iderror.setVisible(!sUp.isValidID(idtext.getText()));
         }
     };
+    
     Action actiontg = new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
             tgerror.setVisible(!sUp.isValidTg(tgtext.getText()));
         }
     };
-
+    
     Action actionpass = new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -319,9 +287,7 @@ public class Implementation {
         sendCode.setVisible(true);
         submit.setVisible(false);
         resetPass.setVisible(false);
-
         PasswordReset passwordReset = new PasswordReset();
-
         resLabelCode.setText("Enter login:");
         resLabelCode.setBounds(30, 20, 150, 20);
         restCode.setText("");
@@ -341,7 +307,6 @@ public class Implementation {
                     resLabelCode.setBounds(30, 20, 150, 20);
                     restCode.setText("");
                     restCode.setBounds(40, 40, 200, 30);
-
                     submit.setText("Submit");
                     submit.setBounds(90, 80, 100, 20);
                     submit.addActionListener(new ActionListener() {
@@ -373,7 +338,6 @@ public class Implementation {
                                             resFrame.add(passerror);
                                             passerror.setVisible(!sUp.isValidPassword(Arrays.toString(passwordtext.getPassword())));
                                             passerror.setBounds(5, 153, 300, 20);
-
                                         }
                                     }
                                 });
@@ -383,7 +347,6 @@ public class Implementation {
                             }
                         }
                     });
-
                 } else {
                     JOptionPane.showMessageDialog(frame, "Incorrect login or IIN", "Error", JOptionPane.PLAIN_MESSAGE);
                 }
