@@ -47,7 +47,8 @@ public class SignUp extends Shape {
                     containsSymbol = true;
                 }
             }
-        }else{
+        }
+        else {
             return false;
         }
         return containsSymbol && containsUpper;
@@ -94,7 +95,7 @@ public class SignUp extends Shape {
                         "', '" + encryptedPassword + "', '" + getSalt() + "', '" + getEnteredEmail() + "', '" + getEnteredTg() + "');";
                 Statement statement = con.createStatement();
                 int rows = statement.executeUpdate(sql);
-                if (rows > 0){
+                if (rows > 0) {
                     return true;
                 }
             } catch (SQLException e) {
