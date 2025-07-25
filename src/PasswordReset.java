@@ -33,11 +33,9 @@ public class PasswordReset extends SignIn {
             System.out.println("Sending code to email '" + to + "'...");
             Transport.send(message);
             System.out.println("Code sended");
-            ;
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-
     }
 
     public String getEmail(String LoginOrId) {
@@ -59,7 +57,7 @@ public class PasswordReset extends SignIn {
         return getEnteredEmail();
     }
 
-    public void     UpdatePassword(String pass, String loginOrId) throws NoSuchAlgorithmException {
+    public void UpdatePassword(String pass, String loginOrId) throws NoSuchAlgorithmException {
         PasswordEncryptionService passwordEncryptionService = new PasswordEncryptionService();
         try {
             Connection con = DriverManager.getConnection(jdbcUrl, userName, MasterPassword);
