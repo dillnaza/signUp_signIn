@@ -2,13 +2,15 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
 public abstract class Shape {
+    String jdbcUrl = "jdbc:postgresql://localhost:5432/aitu";
+    String userName = "postgres";
+    String MasterPassword = "2305";
     private String enteredId;
     private String enteredLogin;
     private String enteredPassword;
     private String enteredTg;
     private String enteredEmail;
     private String salt;
-
 
     public String getEnteredId() {
         return enteredId;
@@ -57,10 +59,6 @@ public abstract class Shape {
     public void setSalt(String salt) {
         this.salt = salt;
     }
-
-    String jdbcUrl = "jdbc:postgresql://localhost:5432/aitu";
-    String userName = "postgres";
-    String MasterPassword = "2305";
 
     protected boolean doesUserExist(String individualNumber, String login) {
         return true;
