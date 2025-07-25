@@ -12,14 +12,11 @@ public class PasswordReset extends SignIn {
 
     public void sendcode(String to) {
         String from = "dilnazbaidakhanova@gmail.com";
-
         Properties properties = System.getProperties();
-
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "465");
         properties.put("mail.smtp.ssl.enable", "true");
         properties.put("mail.smtp.auth", "true");
-
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("dilnazbaidakhanova@gmail.com", "GMAILCODE");
