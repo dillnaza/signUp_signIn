@@ -28,8 +28,7 @@ public class SignUp extends Shape {
                     break;
                 }
             }
-        }
-        else {
+        } else {
             return false;
         }
         return isDigit;
@@ -47,8 +46,7 @@ public class SignUp extends Shape {
                     containsSymbol = true;
                 }
             }
-        }
-        else {
+        } else {
             return false;
         }
         return containsSymbol && containsUpper;
@@ -70,8 +68,7 @@ public class SignUp extends Shape {
             ResultSet checkLogin = statement.executeQuery("SELECT * FROM users WHERE login = '" + login + "';");
             if (checkLogin.next()) {
                 return false;
-            }
-            else {
+            } else {
                 con.close();
                 return true;
             }
